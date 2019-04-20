@@ -2,7 +2,7 @@ import csv
 import math
 import random
 import time
-jumneuron=3
+jumneuron=6
 dataset=[]
 neuron=[]
 dev=2
@@ -54,7 +54,7 @@ with open('hasil.csv', 'w', newline='\n') as writeFile:
 	writer = csv.writer(writeFile,dialect='excel')
 	for x in dataset:
 		cluster,s=getterdekat(x)
-		sse+=s
+		sse+=math.sqrt(s)
 		writer.writerow([x[0],x[1],cluster])
 writeFile.close()
 print("sse : ",sse)
